@@ -176,7 +176,7 @@ export default function Home() {
               )}
             </div>
             <Textarea
-              placeholder="/NO RESI : 0
+  placeholder={`/NO RESI : 0
 NAMA : Fadhel
 ALAMAT : Btn graha cendekia b19 Makassar  jln Daya raya Kel DAYA
 KECAMATAN : BIRING KANAYA
@@ -190,11 +190,11 @@ ONGKIR : 46.000
 JENIS PEMBAYARAN : COD
 ===========================1
 
-Paste semua data order anda disini..."
-              value={inputData}
-              onChange={(e) => setInputData(e.target.value)}
-              className="min-h-[280px] font-mono text-xs bg-white dark:bg-[#1a1a1a] border-neutral-200 dark:border-neutral-800 focus:border-neutral-900 dark:focus:border-neutral-600 rounded-xl resize-none"
-            />
+Paste semua data order anda disini...`}
+  value={inputData}
+  onChange={(e) => setInputData(e.target.value)}
+  className="min-h-[280px] font-mono text-xs bg-white dark:bg-[#1a1a1a] border-neutral-200 dark:border-neutral-800 focus:border-neutral-900 dark:focus:border-neutral-600 rounded-xl resize-none whitespace-pre-wrap"
+/>
             <div className="mt-4">
               <Button
                 onClick={processDuplicates}

@@ -73,7 +73,9 @@ export default function Home() {
 
   const formatOrderData = (order: OrderData, index?: number): string => {
     const idx = index !== undefined ? index : order.originalIndex
-    return `/NO RESI : ${order.noResi}\nNAMA : ${order.nama}\nALAMAT : ${order.alamat}\nKECAMATAN : ${order.kecamatan}\nKOTA : ${order.kota}\nPROVINSI : ${order.provinsi}\nKODEPOS : ${order.kodepos}\nNO HP : ${order.noHp}\nNAMA BARANG : ${order.namaBarang}\nNILAI PEMBAYARAN : ${order.nilaiPembayaran}\nONGKIR : ${order.ongkir}\nJENIS PEMBAYARAN : ${order.jenisPembayaran}\n===========================${idx}`
+    const displayNumber = idx + 1 // Start from #1 instead of #0
+    const separator = '='.repeat(27) // Always 27 equal signs
+    return `/NO RESI : ${order.noResi}\nNAMA : ${order.nama}\nALAMAT : ${order.alamat}\nKECAMATAN : ${order.kecamatan}\nKOTA : ${order.kota}\nPROVINSI : ${order.provinsi}\nKODEPOS : ${order.kodepos}\nNO HP : ${order.noHp}\nNAMA BARANG : ${order.namaBarang}\nNILAI PEMBAYARAN : ${order.nilaiPembayaran}\nONGKIR : ${order.ongkir}\nJENIS PEMBAYARAN : ${order.jenisPembayaran}\n${separator}${displayNumber}`
   }
 
   const copyDuplicates = () => {
@@ -175,7 +177,7 @@ export default function Home() {
                 </button>
               )}
             </div>
-            <Textarea
+<Textarea
   placeholder={`/NO RESI : 0
 NAMA : Fadhel
 ALAMAT : Btn graha cendekia b19 Makassar  jln Daya raya Kel DAYA
@@ -271,7 +273,7 @@ Paste semua data order anda disini...`}
                           className="bg-white dark:bg-[#1a1a1a] border border-neutral-200 dark:border-neutral-800/50 rounded-xl p-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors"
                         >
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
-                            <span className="text-xs text-neutral-400 dark:text-neutral-500">#{item.originalIndex}</span>
+                            <span className="text-xs text-neutral-400 dark:text-neutral-500">#{item.originalIndex + 1}</span>
                             <span className="text-sm font-medium text-neutral-900 dark:text-white">{item.nama}</span>
                             <span className="ml-auto text-xs text-neutral-500 dark:text-neutral-400 font-mono">{item.noHp}</span>
                           </div>
@@ -335,7 +337,7 @@ Paste semua data order anda disini...`}
                             {group.items.map((item, itemIdx) => (
                               <div key={itemIdx} className="p-4">
                                 <div className="flex items-center gap-2 mb-2">
-                                  <span className="text-xs text-neutral-400 dark:text-neutral-500">#{item.originalIndex}</span>
+                                  <span className="text-xs text-neutral-400 dark:text-neutral-500">#{item.originalIndex + 1}</span>
                                   <span className="text-sm font-medium text-neutral-900 dark:text-white">{item.nama}</span>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-xs">
@@ -371,7 +373,7 @@ Paste semua data order anda disini...`}
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
-              © 2025 Deteksi Data Dobel
+              © 2026 Deteksi Data Dobel
             </p>
             <p className="text-xs text-neutral-400 dark:text-neutral-500">
               Dibuat untuk efisiensi bisnis Anda

@@ -24,8 +24,8 @@ interface DuplicateGroup {
 function parseOrderData(rawData: string): OrderData[] {
   const orders: OrderData[] = []
 
-  // Split by the separator pattern "===========================X"
-  const entries = rawData.split(/===========================\d+/)
+  // Split by the separator pattern - any number of "=" followed by digits
+  const entries = rawData.split(/={3,}\d+/)
 
   entries.forEach((entry, idx) => {
     const trimmedEntry = entry.trim()

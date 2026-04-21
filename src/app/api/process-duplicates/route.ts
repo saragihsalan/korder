@@ -142,10 +142,12 @@ function detectDuplicates(orders: OrderData[]): {
   const duplicates: DuplicateGroup[] = []
   groupedByDuplicate.forEach((items, key) => {
     if (items.length > 1) {
-      // This is a duplicate
+      // This is a duplicate group
+      // First item goes to unique, rest go to duplicates
+      uniqueOrders.push(items[0])
       duplicates.push({
         key: items[0].noHp,
-        items: items
+        items: items.slice(1) // Only the duplicate items (2nd, 3rd, etc.)
       })
     } else {
       // This is unique

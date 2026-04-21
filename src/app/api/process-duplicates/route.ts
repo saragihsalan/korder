@@ -77,6 +77,7 @@ function parseOrderData(rawData: string): OrderData[] {
           break
         case 'nilaipembayaran':
         case 'nilaipembayaran:':
+        case 'hargabarang':
           order.nilaiPembayaran = value
           break
         case 'ongkir':
